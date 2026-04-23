@@ -9,7 +9,7 @@ void kernel_main(void)
     printc("Kernel booted!\n");
     printc("VGA driver is working.\n\n");
 
-    /color output
+    //color output
     vga_set_color(VGA_COLOR_GREEN, VGA_COLOR_BLACK);
     printc("[  OK  ] ");
     vga_set_color(VGA_COLOR_LIGHT_GREY, VGA_COLOR_BLACK);
@@ -25,7 +25,7 @@ void kernel_main(void)
     vga_set_color(VGA_COLOR_LIGHT_GREY, VGA_COLOR_BLACK);
     printc("Example error message\n\n");
 
-    /numbers
+    //numbers
     vga_set_color(VGA_COLOR_CYAN, VGA_COLOR_BLACK);
     printc("Kernel base address : ");
     printc_hex(0xFFFFFFFF80000000ULL);
@@ -35,16 +35,16 @@ void kernel_main(void)
     printc_dec(4096);
     printc(" bytes\n\n");
 
-    /status bar
+    //status bar
     vga_set_color(VGA_COLOR_BLACK, VGA_COLOR_LIGHT_GREY);
     printc_at("  MyOS v0.1  |  Press any key...                               "
               "              ", 0, VGA_HEIGHT - 1);
 
-    /reset colors
+    //reset colors
     vga_set_color(VGA_COLOR_LIGHT_GREY, VGA_COLOR_BLACK);
     printc("Kernel initialisation complete.\n");
 
-    /halt
+    //halt
     for (;;) {
         __asm__ volatile ("hlt");
     }
