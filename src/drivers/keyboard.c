@@ -56,6 +56,7 @@ void keyboard_handler()
     {
         keyboard_buffer[buffer_index++] = c;
     }
+    outb(0x20, 0x20);
 }
 
 bool keyboard_line_ready()
