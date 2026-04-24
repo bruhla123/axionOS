@@ -1,6 +1,17 @@
 #include "../drivers/vga.h"
 #include "../drivers/keyboard.h"
 
+int strcmp(const char *a, const char *b)
+{
+    while (*a && *b) {
+        if (*a != *b)
+            return *a - *b;
+        a++;
+        b++;
+    }
+    return *a - *b;
+}
+
 void kernel_main(void)
 {
     vga_init();
@@ -43,6 +54,16 @@ void kernel_main(void)
     //reset colors
     vga_set_color(VGA_COLOR_LIGHT_GREY, VGA_COLOR_BLACK);
     printc("Kernel initialisation complete.\n");
+
+    while(1) {
+        if (keyboard_line_ready()) {
+            char *line = keyboard_get_line();
+            if (strcm(line, "help") == 0) {
+                printc("commands \n");
+                printc("help");
+            }
+        }
+    }
 
     //halt
     for (;;) {
