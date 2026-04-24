@@ -1,5 +1,6 @@
 #include "../drivers/vga.h"
 #include "../drivers/keyboard.h"
+#include "game.h"
 
 void main(void) 
 {
