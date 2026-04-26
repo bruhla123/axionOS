@@ -4,6 +4,7 @@
 #include "../drivers/io.h"
 #include "../drivers/gdt.h"
 #include "../drivers/keyboard.h"
+#include "../drivers/timer.h"
 
 #define INPUT_BUF 128
 
@@ -21,13 +22,15 @@ int strcmp(const char *a, const char *b)
 void kernel_main(void)
 {
     vga_init();
+	timer_init();
     gdt_init();
     idt_init();
     pic_remap();
     keyboard_init();
 
-    printc("Kernel booted!\n");
-    printc("VGA driver is working.\n\n");
+    printc("\n \n \n \n \n \n \n");
+	printc("booting axoinOS");
+	timer_sleep(8000);
 
     //color output
     vga_set_color(VGA_COLOR_GREEN, VGA_COLOR_BLACK);
@@ -50,14 +53,13 @@ void kernel_main(void)
     printc("Kernel base address : ");
     printc_hex(0xFFFFFFFF80000000ULL);
     printc("\n");
-    //status bar
-    vga_set_color(VGA_COLOR_BLACK, VGA_COLOR_LIGHT_GREY);
-    printc_at("  axionOS v0.1  |  demo version                              "
-              "              ", 0, VGA_HEIGHT - 1);
 
     //reset colors
     vga_set_color(VGA_COLOR_LIGHT_GREY, VGA_COLOR_BLACK);
     printc("Kernel initialisation complete.\n");
+
+	timer_sleep(3000);
+	vga_clear();
     
     __asm__ volatile ("sti");
 
