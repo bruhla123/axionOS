@@ -1,1 +1,4 @@
-
+commands:
+help
+sysindo
+userland
