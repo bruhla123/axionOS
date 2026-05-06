@@ -107,6 +107,13 @@ void kernel_main(void)
                     vga_set_color(VGA_COLOR_LIGHT_GREY, VGA_COLOR_BLACK);
                 }
 
+				if (stcrmp(usrinput, "spam") == 0) {
+					while 1
+					{
+						printf(arg);
+					}
+				}
+
                 idx = 0;
                 printc("axion> ");
             }
