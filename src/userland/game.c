@@ -14,4 +14,8 @@ int strcmp(const char *a, const char *b)
 
 void start() {
   printc("starting game");
+  if (keyboard_availeble()) {
+      	    char c = keyboard_getchar();
+            char str[] = { c, '\0' };
+  }
 }
