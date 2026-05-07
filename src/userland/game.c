@@ -23,6 +23,10 @@ void start() {
                   if (strcmp(str, "w") == 0) {
                       printc("walking");
                   }
+
+                  if (strcmp(str, " ") == 0) {
+                      printc("jumping");
+                  }
               }
           }
     }
