@@ -27,6 +27,10 @@ void start() {
                   if (strcmp(str, " ") == 0) {
                       printc("jumping");
                   }
+
+                  if (strcmp(str, "\e") == 0) {
+                      printc("quiting game");
+                  }
               }
           }
     }
