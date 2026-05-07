@@ -14,8 +14,16 @@ int strcmp(const char *a, const char *b)
 
 void start() {
   printc("starting game");
-  if (keyboard_availeble()) {
-      	    char c = keyboard_getchar();
-            char str[] = { c, '\0' };
-  }
+    while 1 {
+          if (keyboard_availeble()) {
+      	      char c = keyboard_getchar();
+              char str[] = { c, '\0' };
+
+              if (c) {
+                  if (strcmp(str, "w") == 0) {
+                      printc("walking");
+                  }
+              }
+          }
+    }
 }
