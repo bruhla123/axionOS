@@ -97,6 +97,7 @@ void kernel_main(void)
 
                 if (strcmp(usrinput, "userland") == 0) {
                     printc("fastfetch\n");
+					printc("game\n");
                 }
 
                 if (strcmp(usrinput, "clear") == 0) {
