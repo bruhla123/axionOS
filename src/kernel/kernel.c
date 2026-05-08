@@ -6,6 +6,7 @@
 #include "../drivers/keyboard.h"
 #include "../drivers/timer.h"
 #include "../userland/fastfetch.h"
+#include "../userland/game.h"
 
 #define INPUT_BUF 128
 
@@ -107,11 +108,8 @@ void kernel_main(void)
                     vga_set_color(VGA_COLOR_LIGHT_GREY, VGA_COLOR_BLACK);
                 }
 
-				if (stcrmp(usrinput, "spam") == 0) {
-					while 1
-					{
-						printf(arg);
-					}
+				if (strcmp(usrinput, "game") == 0) {
+					start();
 				}
 
                 idx = 0;
