@@ -34,4 +34,7 @@ void start() {
               }
           }
     }
+    else {
+        __asm__ volatile("hlt");
+    }
 }
