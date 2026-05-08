@@ -35,11 +35,10 @@ void kernel_main(void)
     __asm__ volatile ("sti");
 
     printc("\n \n \n \n \n \n \n \n \n \n \n");
-	printc("                             booting axoinOS");
+	printc("                         Welcome to axionOS");
 	timer_sleep(4000);
     vga_clear();
 
-    //color output
     vga_set_color(VGA_COLOR_GREEN, VGA_COLOR_BLACK);
     printc("[  OK  ] ");
     vga_set_color(VGA_COLOR_LIGHT_GREY, VGA_COLOR_BLACK);
@@ -61,7 +60,6 @@ void kernel_main(void)
     printc_hex(0xFFFFFFFF80000000ULL);
     printc("\n");
 
-    //reset colors
     vga_set_color(VGA_COLOR_LIGHT_GREY, VGA_COLOR_BLACK);
     printc("Kernel initialisation complete.\n");
 
