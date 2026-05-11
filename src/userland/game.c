@@ -1,6 +1,23 @@
 #include "../drivers/vga.h"
 #include "../drivers/keyboard.h"
 
+int x = 0
+int y = 0
+
+void x_axis() {
+    while (x > 0) {
+        printc("\n");
+    }
+}
+
+void z_axis() {
+    while (z > 0) {
+        printc(" ");
+        printc("\b");
+        printc("#");
+    }
+}
+
 int strcmp(const char *a, const char *b)
 {
     while (*a && *b) {
