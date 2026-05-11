@@ -1,10 +1,22 @@
 #include "../drivers/vga.h"
 #include "../drivers/keyboard.h"
 
+#define BUFFER 1024
+
 int x = 10
 int y = 1
 
 int jumping_hight = 2;
+
+void draw_world(char[BUFFER] wrld) {
+    if (strcmp(wrld, "1") {
+        int x-tmp = x;
+        x = 12;
+        x_axis;
+        x = x-tmp;
+        x-tmp = 0;
+    }
+}
 
 void x_axis() {
     vga_clear();
@@ -51,6 +63,10 @@ void start() {
 
                   if (strcmp(str, " ") == 0) {
                       x = x - jumping_hight;
+                      x_axis;
+                      x = x - jumping_hight - 1;
+                      x_axis;
+                      x = x - jumping_hight - 1;
                       x_axis;
                   }
               }
