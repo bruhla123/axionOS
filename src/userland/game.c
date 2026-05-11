@@ -11,8 +11,8 @@ int jumping_hight = 2;
 
 void draw_world(char[BUFFER] wrld) {
     if (strcmp(wrld, "1") {
+        tmp = 20;
         while (tmp > 0) {
-            tmp = 20;
             printc_at("#", tmp, 12);
             tmp--;
         }
