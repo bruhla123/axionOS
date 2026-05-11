@@ -1,8 +1,10 @@
 #include "../drivers/vga.h"
 #include "../drivers/keyboard.h"
 
-int x = 0
-int y = 0
+int x = 10
+int y = 1
+
+int jumping_hight = 2;
 
 void x_axis() {
     while (x > 0) {
@@ -37,16 +39,17 @@ void start() {
               char str[] = { c, '\0' };
 
               if (c) {
-                  if (strcmp(str, "w") == 0) {
+                  if (strcmp(str, "d") == 0) {
                       printc("walking");
                   }
 
-                  if (strcmp(str, " ") == 0) {
+                  if (strcmp(str, "a") == 0) {
                       printc("jumping");
                   }
 
-                  if (strcmp(str, "\e") == 0) {
-                      printc("quiting game");
+                  if (strcmp(str, " ") == 0) {
+                      x = x - jumping_hight;
+                      x_axis;
                   }
               }
           }
