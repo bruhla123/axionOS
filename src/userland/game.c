@@ -5,16 +5,17 @@
 
 int x = 10
 int y = 1
+int tmp = 0;
 
 int jumping_hight = 2;
 
 void draw_world(char[BUFFER] wrld) {
     if (strcmp(wrld, "1") {
-        int x-tmp = x;
-        x = 12;
-        x_axis;
-        x = x-tmp;
-        x-tmp = 0;
+        while (tmp > 0) {
+            tmp = 20;
+            printc_at("#", tmp, 12);
+            tmp--;
+        }
     }
 }
 
