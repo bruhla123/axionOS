@@ -7,12 +7,14 @@ int y = 1
 int jumping_hight = 2;
 
 void x_axis() {
+    vga_clear();
     while (x > 0) {
         printc("\n");
     }
 }
 
 void z_axis() {
+    vga_clear();
     while (z > 0) {
         printc(" ");
         printc("\b");
