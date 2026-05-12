@@ -65,6 +65,9 @@ void check_for_blocks(char* wblock) {
         }
 }
 
+void check_for_win_block() {
+}
+
 void draw_human() {
     vga_clear();
     printc_at("#", y, x);
@@ -85,14 +88,14 @@ void start() {
                       y--;
                       draw_human();
                       draw_world();
-                      check_for_blocks();
+                      check_for_blocks(non_jump_l);
                   }
 
                   if (strcmp2(str, "a") == 0) {
                       y++;
                       draw_human();
                       draw_world();
-                      check_for_blocks();
+                      check_for_blocks(non_jump_r);
                   }
 
                   if (strcmp2(str, " ") == 0) {
